@@ -218,7 +218,6 @@ body{
 }
 
 .product__list-link{
-  display: block;
   margin-top: auto;
   transition: transform .3s;
 }
@@ -309,7 +308,7 @@ body{
   }
 
   .product__list{
-    grid: repeat(4, 1fr) / 222px;
+    grid: repeat(4, auto) / 222px;
   }
 }
 
