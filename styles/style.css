@@ -282,6 +282,10 @@ body{
   padding: 14px 0 16px;
 }
 
+.nobr{
+  white-space: nowrap;
+}
+
 
 @media (max-width: 768px) {
   .inner{
