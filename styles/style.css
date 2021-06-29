@@ -45,64 +45,114 @@ body{
 
 .button{
   display: block;
-  margin: 35px auto 28px;
-  position: relative;
   width: 218px;
   height: 51px;
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 14px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-  cursor: default;
+  position: relative;
+}
+
+.button--center{
+  margin: 35px auto 28px;
+}
+
+.button--product{
+  width: 125px;
+  height: 30px;
+  margin: 24px 5px 0;
 }
 
 .button__text{
   position: relative;
   z-index: 3;
   display: inline-block;
-  box-sizing: border-box;
-  line-height: 50px;
   width: 100%;
   height: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
   font-weight: 700;
+  font-size: 14px;
+  line-height: 50px;
   cursor: pointer;
 }
 
+.button__text--product{
+  padding-left: 13px;
+  color: #000;
+  text-align: left;
+  font-size: 12px;
+  line-height: 26px;
+}
+
 .button__background{
-  z-index: 1;
-  position: absolute;
-  top: 6px;
-  left: 0;
   background-color: #87bd54;
   width: 212px;
   height: 45px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  z-index: 1;
   transition: .1s;
+}
+
+.button__background--product{
+  width: 121px;
+  height: 26px;
+  top: 4px;
 }
 
 .button__border{
-  z-index: 2;
+  border: 2px solid #000;
+  width: 212px;
+  height: 45px;
   position: absolute;
   top: 0;
   left: 6px;
-  background-color: transparent;
-  width: 212px;
-  height: 45px;
-  border: 2px solid #000;
+  z-index: 2;
   transition: .1s;
 }
 
-.button__text:hover + .button__background{
+.button__border--product{
+  width: 121px;
+  height: 26px;
+  left: 4px;
+}
+
+.button__border--product::before{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 26px;
+  background-color: #fff;
+  width: 21px;
+  height: 2px;
+}
+
+.button__border--product::after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 28px;
+  width: 17px;
+  height: 17px;
+  transform: rotate(45deg);
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+
+.button__text:hover + .button__background,
+.button__text:hover ~ .button__border{
   top: 3px;
   left: 3px;
 }
 
-.button__text:hover ~ .button__border{
-  top: 3px;
-  left: 3px;
+.button__text--product:hover + .button__background--product,
+.button__text--product:hover ~ .button__border--product{
+  top: 0px;
+  left: 0px;
+}
+
+.button:focus-visible{
+  outline: #000 dashed 2px;
 }
 
 .text{
@@ -174,7 +224,7 @@ body{
 }
 
 .product{
-  margin: 35px 0 55px;
+  margin: 35px 0 60px;
 }
 
 .product__list{
@@ -250,19 +300,8 @@ body{
   z-index: 2;
 }
 
-.product__list-text,
-.product__list-link{
-  margin-left: 10px;
-  margin-right: 4px;
-}
-
-.product__list-link{
-  margin-top: auto;
-  transition: transform .3s;
-}
-
-.product__list-link:hover{
-  transform: scale(1.1) translate(10px, -5px);
+.product__text{
+  margin: 6px 4px auto 10px;
 }
 
 .complition{
@@ -348,6 +387,10 @@ body{
 
   .product__list{
     grid: repeat(4, auto) / 222px;
+  }
+
+  .button--product{
+    margin: 15px 5px 0;
   }
 }
 
